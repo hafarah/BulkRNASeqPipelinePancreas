@@ -44,3 +44,16 @@ sudo chmod +x /usr/local/fastqc/FastQC/fastqc
 
 # Step 5: Create a symbolic link to make FastQC executable system-wide
 sudo ln -s /usr/local/fastqc/FastQC/fastqc /usr/local/bin/fastqc
+
+# Next you need to install Hisat2
+
+sudo apt install hisat2
+# or conda install -c bioconda hisat2 if you have Conda avialable
+# place the program on path by adding this to the bottom of the shell configuration file
+nano ~/.bashrc
+
+export PATH="/path/to/hisat2:$PATH"
+export PATH="/usr/local/fastqc/FastQC:$PATH"
+source ~/.bashrc   # for Bash
+
+
