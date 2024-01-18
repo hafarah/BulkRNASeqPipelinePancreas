@@ -1,8 +1,8 @@
 # BulkRNASeqPipelinePancreas
-# This is a pipeline for the Bulk RNASEQ of pancreas samples
-# Steps to analyse FASTQ and BAM files
-# Download FTP using wget (link) into ubuntu
-# OR Extract compressed .gz files using gunzip (name of file) in ubuntu
+#This is a pipeline for the Bulk RNASEQ of pancreas samples
+#Steps to analyse FASTQ and BAM files
+#Download FTP using wget (link) into ubuntu
+#OR Extract compressed .gz files using gunzip (name of file) in ubuntu
 
 # Download Java and fastc in Ubuntu
 
