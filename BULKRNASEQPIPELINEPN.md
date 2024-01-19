@@ -4,7 +4,7 @@
 # Download FTP using wget (link) into ubuntu
 # OR Extract compressed .gz files using gunzip (name of file) in ubuntu
 
-# Download Java and fastc in Ubuntu
+# Download Java and fastqc in Ubuntu
 
 # Step 1: Update the package lists
 sudo apt-get update
