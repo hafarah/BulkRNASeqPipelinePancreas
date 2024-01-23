@@ -23,7 +23,14 @@ export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export PATH=$PATH:$JAVA_HOME/bin
 # Add the above line to your shell profile file for persistence
 
-
+# Install miniconda in Ubuntu
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm -rf ~/miniconda3/miniconda.sh
+#once installing complete then paste
+~/miniconda3/bin/conda init bash
+~/miniconda3/bin/conda init zsh
 
 # STEP 4: Begin QC sample using tool fastqc
 
@@ -65,9 +72,8 @@ nano .bashrc
 #add to bottom, print the file path here and save changes 
 export PATH=$PATH:/home/user/apps/hisat2-2.2.1
 
-sudo apt install hisat2
-# or conda install -c bioconda hisat2 if you have Conda avialable
-# place the program on path by adding this to the bottom of the shell configuration file
+# or conda install -c bioconda hisat2 if you have Conda available
+# place the program on PATH by adding this to the bottom of the shell configuration file
 nano ~/.bashrc
 
 export PATH="/path/to/hisat2:$PATH"
