@@ -56,4 +56,10 @@ export PATH="/path/to/hisat2:$PATH"
 export PATH="/usr/local/fastqc/FastQC:$PATH"
 source ~/.bashrc   # for Bash
 
+# Step 6 install latest Trimmomatic release on USADELLAB github and requires java installed
+
+wget "https://github.com/usadellab/Trimmomatic/files/5854859/Trimmomatic-0.39.zip"
+unzip Trimmomatic-0.39.zip
+
+
 
