@@ -45,7 +45,25 @@ sudo chmod +x /usr/local/fastqc/FastQC/fastqc
 # Step 5: Create a symbolic link to make FastQC executable system-wide
 sudo ln -s /usr/local/fastqc/FastQC/fastqc /usr/local/bin/fastqc
 
-# Next you need to install Hisat2
+# Next you need to install Hisat2 in Ubuntu 
+
+wget https://cloud.biohpc.swmed.edu/index.php/s/oTtGWbWjaxsQ2Ho/download
+unzip download
+cd hisat2-2.2.1
+#confirm hisat2-align-l and hisat2-align-s present and test its working by calling program
+hisat2-2.2.1/hisat2
+#export to PATH 
+mkdir apps
+mv -v hisat2-2.2.1/ apps/
+#get directory location of hisat2 directory using 
+cd apps/hisat2-2.2.1
+pwd
+#copy the working directory
+cd
+#Add hisat2 to PATH
+nano .bashrc
+#add to bottom, print the file path here and save changes 
+export PATH=$PATH:/home/user/apps/hisat2-2.2.1
 
 sudo apt install hisat2
 # or conda install -c bioconda hisat2 if you have Conda avialable
