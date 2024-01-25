@@ -91,6 +91,29 @@ conda activate subread
 #Check it works via 
 featureCounts -v
 
+# Step 8 BEGIN RNASEQ QC STEPS WITH FASTQC PACKAGE
 
+fastqc data/demo.fastq -o data/
 
+# Step 9 trim poor quality reads from the file using Trimmomatic package and rerun fastqc package on trimmed data
 
+java -jar ~/home/husseinf/Trimmomatic-0.39/trimmomatic-0.39.jar SE -threads 4 data/demo.fastq data/demo_trimmed.fastq TRAILING:10 -phred33
+echo "Trimmomatic finished running!"
+
+fastqc data/demo_trimmed.fastq -o data/
+
+# Step 10 Run HISAT2 package to align the reads to the genome with here is the grch38 genome 
+
+hisat2 -q --rna-strandness R -x HISAT2/grch38/genome -U data/demo_trimmed.fastq | samtools sort -o HISAT2/demo_trimmed.bam
+echo "HISAT2 finished running!"
+
+# Step 11 Run the package featureCounts to quantify the reads 
+
+featureCounts -S 2 -a ../hg38/Homo_sapiens.GRCh38.106.gtf -o quants/demo_featurecounts.txt HISAT2/demo_trimmed.bam
+echo "featureCounts finished running!"
+# Quantify time it takes using seconds counter 
+
+duration=$SECONDS
+echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
+
+#All of this code is in bash script in another md file within Git repo
