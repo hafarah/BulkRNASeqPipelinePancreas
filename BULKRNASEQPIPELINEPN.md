@@ -109,7 +109,7 @@ echo "HISAT2 finished running!"
 
 # Step 11 Run the package featureCounts to quantify the reads 
 
-featureCounts -S 2 -a ../hg38/Homo_sapiens.GRCh38.106.gtf -o quants/demo_featurecounts.txt HISAT2/demo_trimmed.bam
+featureCounts -S 2 -a /home/husseinf/RNASeq_pipeline/hg38/Homo_sapiens.GRCh38.106.gtf -o quants/demo_featurecounts.txt HISAT2/demo_trimmed.bam
 echo "featureCounts finished running!"
 # Quantify time it takes using seconds counter 
 
