@@ -85,5 +85,12 @@ source ~/.bashrc   # for Bash
 wget "https://github.com/usadellab/Trimmomatic/files/5854859/Trimmomatic-0.39.zip"
 unzip Trimmomatic-0.39.zip
 
+# Step 7 install featureCounts package
+conda create -n subread -c bioconda subread
+conda activate subread
+#Check it works via 
+featureCounts -v
+
+
 
 
