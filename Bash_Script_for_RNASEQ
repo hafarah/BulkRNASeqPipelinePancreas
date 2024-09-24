@@ -25,7 +25,7 @@ fastqc data/demo_trimmed.fastq -o data/
 
 
 # run alignment
-hisat2 -q -p --rna-strandness R -x HISAT2/grch38/genome -U data/demo_trimmed.fastq | samtools sort -o HISAT2/demo_trimmed.bam
+hisat2 -q -p --rna-strandness FR -x HISAT2/grch38/genome -U data/demo_trimmed.fastq | samtools sort -o HISAT2/demo_trimmed.bam
 echo "HISAT2 finished running!"
 
 # STEP 3: Run featureCounts - Quantification
